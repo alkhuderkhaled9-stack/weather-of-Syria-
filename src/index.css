@@ -1,0 +1,76 @@
+/* ─── Reset & Root ─────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:        #050d1a;
+  --bg2:       #08142b;
+  --bg3:       #0d1f3c;
+  --glass:     rgba(8, 22, 50, 0.72);
+  --glass2:    rgba(14, 32, 68, 0.85);
+  --border:    rgba(80, 160, 255, 0.18);
+  --border2:   rgba(80, 160, 255, 0.35);
+  --blue:      #4a9eff;
+  --cyan:      #00d4ff;
+  --gold:      #ffd166;
+  --text1:     #e2f0ff;
+  --text2:     #8ab4d4;
+  --text3:     #4a7aa0;
+  --shadow:    0 8px 40px rgba(0, 100, 255, 0.12);
+  --radius:    16px;
+  --radius-sm: 10px;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Cairo', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text1);
+  min-height: 100vh;
+  direction: rtl;
+}
+
+/* ─── Leaflet overrides ─────────────────────────────────── */
+.leaflet-container {
+  background: #08132a !important;
+  border-radius: var(--radius);
+}
+.leaflet-control-zoom a {
+  background: var(--glass2) !important;
+  color: var(--text1) !important;
+  border-color: var(--border) !important;
+}
+.leaflet-control-zoom a:hover {
+  background: var(--bg3) !important;
+}
+.leaflet-control-attribution {
+  background: rgba(5,13,26,0.7) !important;
+  color: var(--text3) !important;
+  font-size: 10px;
+}
+.custom-tooltip .leaflet-tooltip {
+  background: var(--glass2);
+  border: 1px solid var(--border2);
+  color: var(--text1);
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  font-family: 'Cairo', sans-serif;
+}
+.leaflet-tooltip {
+  background: rgba(8, 22, 50, 0.95) !important;
+  border: 1px solid var(--border2) !important;
+  color: var(--text1) !important;
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  font-family: 'Cairo', sans-serif !important;
+  box-shadow: 0 4px 20px rgba(0,100,255,0.2) !important;
+}
+.leaflet-tooltip::before {
+  border-top-color: var(--border2) !important;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
